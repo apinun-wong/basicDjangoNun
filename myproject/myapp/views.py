@@ -3,10 +3,12 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse("<h2>Hello World Django from Nun</h2>")
+    name = "Apinun"
+    age = 24
+    return render(request, "index.html", {"age": age, "name": name})
 
 def about(request):
-    return HttpResponse("<h2>About</h2>")
+    return render(request, "about.html")
 
 def form(request):
-    return HttpResponse("<h2>Form</h2>")
+    return render(request, "form.html")
