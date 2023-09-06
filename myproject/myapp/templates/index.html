@@ -4,11 +4,27 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Hi, {{name | upper}}</h1>
-    <h2>You are {{age}} years old.</h2>
-    {% if age >= 30 %}
-        <h3>You are adult.</h3>
-    {% else %}
-        <h3>You are teenage.</h3>
-    {% endif %}
+    <h2>ประชากรบ้าน</h2>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for person in allPerson %}
+            <tr>
+                <th scope="row">{{person.id}}</th>
+                <td>{{person.name}}</td>
+                <td>{{person.age}}</td>
+                <td><a href="#" class="btn btn-warning">Edit</a></td>
+                <td><a href="#" class="btn btn-danger">Remove</a></td>
+            </tr>
+              {% endfor %}
+        </tbody>
+      </table>
 {% endblock %}
